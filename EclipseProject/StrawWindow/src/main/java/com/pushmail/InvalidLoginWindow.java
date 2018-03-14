@@ -1,4 +1,4 @@
-package pack.straw.ui;
+package com.pushmail;
 
 import java.io.IOException;
 
@@ -10,7 +10,7 @@ import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
-//Window - 3
+// Class - 1.1 (Side class for class - 1)
 public class InvalidLoginWindow 
 {
 	private Stage invalidWindow;

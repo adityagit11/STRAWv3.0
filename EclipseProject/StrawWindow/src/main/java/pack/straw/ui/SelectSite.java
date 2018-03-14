@@ -6,6 +6,7 @@ import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
@@ -13,6 +14,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
+//Window - 2
 public class SelectSite 
 {
 	private Stage siteWindow;
@@ -23,6 +25,7 @@ public class SelectSite
 	private String userWebsite;
 	
 	@FXML private TextField WebsiteField;
+	@FXML private Button StartButton;
 	
 	public void openSelectSiteWindow() throws IOException
 	{
@@ -49,6 +52,12 @@ public class SelectSite
 	
 	public void click_StartButton()
 	{
+		userWebsite = WebsiteField.getText();
 		
+		// Site to automate has been entered
+		// Let's start with the automation!
+		
+		Stage stage = (Stage) StartButton.getScene().getWindow();
+		stage.close();
 	}
 }

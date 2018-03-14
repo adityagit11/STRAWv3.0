@@ -15,16 +15,21 @@ import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
+// Window - 1
 public class KickStart extends Application 
 {
+	/*
+	 * GUI IS built using Java-FX and Scene Builder*/
 	private Stage primaryStage;
 	private AnchorPane rootLayout;
 	private FXMLLoader loader;
 	private Scene scene;
 	
+	// Global variables used for programming STRAW
 	private String userUsername;
 	private String userPassword;
 	
+	// Set of some user-credentials in-built
 	private String adminLoginUsername1 = "Aditya Singh";
 	private String adminLoginPassword1 = "B120223005";
 	
@@ -62,10 +67,16 @@ public class KickStart extends Application
 		
 		primaryStage.setScene(scene);
 		
+		// Design for transparent window
 		primaryStage.initStyle(StageStyle.TRANSPARENT);
 		primaryStage.show();
 	}
 	
+	/*
+	 * To configure this function execution with the button on UI
+	 * First open the scene builder and provide fx:id to the button
+	 * Next on the bottom left side with controller tab enter the java file with UI
+	 * Next on the right side of the layout with Code tab enter the #onAction with this function name*/
 	public void click_LoginButton()
 	{
 		userUsername = UsernameField.getText();
@@ -74,6 +85,7 @@ public class KickStart extends Application
 		if(authenticate_Login(userUsername, userPassword))
 		{
 			//Valid Login
+			// Then start a session or simply start the next window to select site
 			SelectSite startSession = new SelectSite();
 			try
 			{
@@ -89,6 +101,7 @@ public class KickStart extends Application
 		else
 		{
 			//Invalid Login
+			// Then pop up a window for invalid login credentials
 			InvalidLoginWindow loginPop = new InvalidLoginWindow();
 			try
 			{
@@ -105,7 +118,8 @@ public class KickStart extends Application
 	{
 		if((username.equalsIgnoreCase(adminLoginUsername1) && password.equalsIgnoreCase(adminLoginPassword1)) ||
 				(username.equalsIgnoreCase(adminLoginUsername2) && password.equalsIgnoreCase(adminLoginPassword2)) ||
-				(username.equalsIgnoreCase(adminLoginUsername3) && password.equalsIgnoreCase(adminLoginPassword3)))
+				(username.equalsIgnoreCase(adminLoginUsername3) && password.equalsIgnoreCase(adminLoginPassword3)) ||
+				(username.equalsIgnoreCase(adminLoginUsername4) && password.equalsIgnoreCase(adminLoginPassword4)))
 			return true;
 		return false;
 	}
