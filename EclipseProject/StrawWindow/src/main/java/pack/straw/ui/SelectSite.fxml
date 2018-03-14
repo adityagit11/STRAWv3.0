@@ -8,22 +8,35 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pack.straw.ui.KickStart">
+<AnchorPane prefHeight="300.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pack.straw.ui.SelectSite">
    <children>
-      <AnchorPane layoutY="-6.0" prefHeight="307.0" prefWidth="100.0" style="-fx-background-color: #5D4C46;">
+      <Label layoutX="380.0" layoutY="283.0" text="© Product by Aditya - Geet - Chandan" />
+      <TextField fx:id="WebsiteField" layoutX="118.0" layoutY="143.0" prefHeight="25.0" prefWidth="445.0" promptText="Enter Website to Automate">
+         <font>
+            <Font name="Arial" size="12.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="TEXT" />
+         </cursor>
+      </TextField>
+      <Button fx:id="StartButton" layoutX="307.0" layoutY="209.0" mnemonicParsing="false" onAction="#click_StartButton" prefHeight="31.0" prefWidth="80.0" text="Start">
+         <font>
+            <Font size="15.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <AnchorPane layoutY="4.0" prefHeight="307.0" prefWidth="100.0" style="-fx-background-color: #5D4C46;">
          <children>
-            <Label layoutX="8.0" layoutY="182.0" text="PASSWORD : " textFill="WHITE">
+            <Label layoutX="11.0" layoutY="138.0" text="ENTER SITE :" textFill="WHITE">
                <font>
                   <Font size="14.0" />
                </font>
             </Label>
-            <Label layoutX="9.0" layoutY="123.0" text="USERNAME : " textFill="WHITE">
-               <font>
-                  <Font size="14.0" />
-               </font>
-            </Label>
-         </children></AnchorPane>
-      <AnchorPane layoutY="-2.0" prefHeight="64.0" prefWidth="600.0" style="-fx-background-color: #E45641;">
+         </children>
+      </AnchorPane>
+      <AnchorPane prefHeight="64.0" prefWidth="600.0" style="-fx-background-color: #E45641;">
          <children>
             <Group layoutX="59.0" layoutY="15.0">
                <children>
@@ -69,28 +82,5 @@
             </Group>
          </children>
       </AnchorPane>
-      <Button fx:id="LoginButton" layoutX="308.0" layoutY="226.0" mnemonicParsing="false" onAction="#click_LoginButton" text="Log In">
-         <font>
-            <Font size="15.0" />
-         </font>
-         <cursor>
-            <Cursor fx:constant="HAND" />
-         </cursor>
-      </Button>
-      <TextField fx:id="UsernameField" layoutX="120.0" layoutY="113.0" prefHeight="25.0" prefWidth="445.0" promptText="Enter Username">
-         <font>
-            <Font name="Arial" size="12.0" />
-         </font>
-         <cursor>
-            <Cursor fx:constant="TEXT" />
-         </cursor></TextField>
-      <TextField fx:id="PasswordField" layoutX="120.0" layoutY="170.0" prefHeight="25.0" prefWidth="445.0" promptText="Enter Password">
-         <font>
-            <Font name="Arial" size="12.0" />
-         </font>
-         <cursor>
-            <Cursor fx:constant="TEXT" />
-         </cursor></TextField>
-      <Label layoutX="370.0" layoutY="273.0" text="© Product by Aditya - Geet - Chandan" />
    </children>
 </AnchorPane>

@@ -1,43 +1,75 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.Cursor?>
+<?import javafx.scene.Group?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pack.straw.ui.KickStart">
    <children>
-      <AnchorPane layoutY="-6.0" prefHeight="307.0" prefWidth="122.0" style="-fx-background-color: #5D4C46;">
+      <AnchorPane layoutY="-6.0" prefHeight="307.0" prefWidth="100.0" style="-fx-background-color: #5D4C46;">
          <children>
-            <ImageView fitHeight="106.0" fitWidth="107.0" layoutX="8.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../../../resources/com/straw/speech-icon-2797263_640.png" />
-               </image>
-            </ImageView>
-         </children>
-      </AnchorPane>
-      <AnchorPane layoutX="122.0" layoutY="-2.0" prefHeight="64.0" prefWidth="478.0" style="-fx-background-color: #E45641;">
-         <children>
-            <Label layoutX="7.0" layoutY="14.0" prefHeight="36.0" prefWidth="464.0" text="Speech to Text Recognition for Automating Web-Browser" textFill="WHITE">
+            <Label layoutX="8.0" layoutY="182.0" text="PASSWORD : " textFill="WHITE">
                <font>
-                  <Font size="18.0" />
+                  <Font size="14.0" />
                </font>
-               <cursor>
-                  <Cursor fx:constant="DISAPPEAR" />
-               </cursor>
             </Label>
+            <Label layoutX="9.0" layoutY="123.0" text="USERNAME : " textFill="WHITE">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+         </children></AnchorPane>
+      <AnchorPane layoutY="-2.0" prefHeight="64.0" prefWidth="600.0" style="-fx-background-color: #E45641;">
+         <children>
+            <Group layoutX="59.0" layoutY="15.0">
+               <children>
+                  <Label layoutX="3.0" opacity="0.89" prefHeight="36.0" prefWidth="480.0" text="  peech to   ext    ecognition for    utomating     eb    rowser" textFill="WHITE">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="DISAPPEAR" />
+                     </cursor>
+                  </Label>
+                  <Label text="S" textFill="WHITE">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="86.0" layoutY="-1.0" text="T" textFill="WHITE">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="126.0" layoutY="-1.0" text="R" textFill="WHITE">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="257.0" layoutY="-1.0" text="A" textFill="WHITE">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="359.0" layoutY="-1.0" text="W" textFill="WHITE">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="406.0" layoutY="-1.0" text="B" textFill="WHITE">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Group>
          </children>
       </AnchorPane>
-      <Label layoutX="21.0" layoutY="116.0" text="USERNAME : " textFill="WHITE">
-         <font>
-            <Font size="14.0" />
-         </font>
-      </Label>
-      <Button fx:id="LoginButton" layoutX="308.0" layoutY="226.0" mnemonicParsing="false" text="Log In">
+      <Button fx:id="LoginButton" layoutX="308.0" layoutY="226.0" mnemonicParsing="false" onAction="#click_LoginButton" text="Log In">
          <font>
             <Font size="15.0" />
          </font>
@@ -45,25 +77,20 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <TextField fx:id="UsernameField" layoutX="144.0" layoutY="113.0" prefHeight="25.0" prefWidth="421.0" promptText="Enter Username">
+      <TextField fx:id="UsernameField" layoutX="120.0" layoutY="113.0" prefHeight="25.0" prefWidth="445.0" promptText="Enter Username">
          <font>
-            <Font name="3dumb" size="12.0" />
+            <Font name="Arial" size="12.0" />
          </font>
          <cursor>
             <Cursor fx:constant="TEXT" />
          </cursor></TextField>
-      <TextField fx:id="PasswordField" layoutX="144.0" layoutY="170.0" prefHeight="25.0" prefWidth="421.0" promptText="Enter Password">
+      <TextField fx:id="PasswordField" layoutX="120.0" layoutY="170.0" prefHeight="25.0" prefWidth="445.0" promptText="Enter Password">
          <font>
-            <Font name="3dumb" size="12.0" />
+            <Font name="Arial" size="12.0" />
          </font>
          <cursor>
             <Cursor fx:constant="TEXT" />
          </cursor></TextField>
       <Label layoutX="370.0" layoutY="273.0" text="© Product by Aditya - Geet - Chandan" />
-      <Label layoutX="20.0" layoutY="170.0" text="PASSWORD : " textFill="WHITE">
-         <font>
-            <Font size="14.0" />
-         </font>
-      </Label>
    </children>
 </AnchorPane>
