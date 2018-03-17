@@ -1,0 +1,20 @@
+#JSGF V1.0;
+
+/**
+ * JSGF Grammar for dialog manager example
+ */
+
+grammar books;
+
+public <books> =     one |
+						two |
+						three |
+						four |
+						five |
+						six |
+						seven |
+						eight |
+						nine |
+						ten |
+						sleep ;
+
