@@ -1,0 +1,29 @@
+#JSGF V1.0;
+
+/**
+ * JSGF Grammar for dialog manager example
+ */
+
+grammar bankbazaar;
+
+public <bankbazaar> =	
+			
+		mouse scroll up |
+		mouse scroll down |
+
+		credit score |
+		home loan |
+		 car loan |
+		used car loan |
+		 personal loan |
+		credit card |
+		debit card |
+		mutual fund |
+		life insurance |
+		car insurance |
+		two wheeler insurance |
+		 health insurance |
+		savings account |
+		fixed deposit |
+
+		terminate application;

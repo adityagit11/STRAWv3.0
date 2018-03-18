@@ -6,15 +6,22 @@
 
 grammar books;
 
-public <books> =     one |
-						two |
-						three |
-						four |
-						five |
-						six |
-						seven |
-						eight |
-						nine |
-						ten |
-						sleep ;
-
+public <books> =     mouse scroll up |
+					 mouse scroll down |
+					 
+					 credit score |
+					 home loan |
+					 car loan |
+					 used car loan |
+					 personal loan |
+					 credit card |
+					 debit card |
+					 mutual fund |
+					 life insurance |
+					 car insurance |
+					 two wheeler insurance |
+					 health insurance |
+					 savings account |
+					 fixed deposit |
+					 
+					 terminate application;

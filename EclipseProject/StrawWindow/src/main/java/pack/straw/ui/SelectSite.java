@@ -13,6 +13,7 @@ import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
+import pack.straw.recog.RecognitionEngine;
 
 //Window - 2
 public class SelectSite 
@@ -56,6 +57,13 @@ public class SelectSite
 		
 		// Site to automate has been entered
 		// Let's start with the automation!
+		
+		System.out.println("Starting recognition for: "+userWebsite);
+		
+		RecognitionEngine myRecogEngine = new RecognitionEngine(userWebsite);
+		
+		// Creating a new thread of Recognition Engine!
+		myRecogEngine.start();
 		
 		Stage stage = (Stage) StartButton.getScene().getWindow();
 		stage.close();

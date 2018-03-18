@@ -16,37 +16,37 @@ public class Book
         try 
         {
         	URL url = Book.class.getResource("book.config.xml");
-
+        	
             System.out.println("Loading...");
-
+            
             ConfigurationManager cm = new ConfigurationManager(url);
             
             Recognizer recognizer = (Recognizer) cm.lookup("recognizer");
             Microphone microphone = (Microphone) cm.lookup("microphone");
-
-
+            
+            
             /* allocate the resource necessary for the recognizer */
             recognizer.allocate();
             
             /* the microphone will keep recording until the program exits */
             if (microphone.startRecording()) 
             {
-
+            	
             	while (true) 
             	{
             		System.out.println("Start speaking. Press Ctrl-C to quit.\n");
-
+            		
                     /*
                      * This method will return when the end of speech
                      * is reached. Note that the endpointer will determine
                      * the end of speech.
                      */ 
             		Result result = recognizer.recognize();
-		    
+            		
             		if (result != null) 
             		{
             			String resultText = result.getBestFinalResultNoFiller();
-            			
+            		
             			System.out.println("You said: " + resultText + "\n");
             		} 
             		else 
