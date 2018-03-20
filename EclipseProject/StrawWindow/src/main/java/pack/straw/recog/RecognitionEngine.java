@@ -7,6 +7,34 @@ import edu.cmu.sphinx.recognizer.Recognizer;
 import edu.cmu.sphinx.result.Result;
 import edu.cmu.sphinx.util.props.ConfigurationManager;
 
+/*
+ * To use below following steps has to be followed!
+ * 
+ * Step1: Instantiate this class with web site name.
+ * 
+ * 		RecognitionEngine REO = new RecognitionEngine(websiteName);
+ * 
+ * Step 2: Start Mic Recording
+ * 
+ * 		REO.startMicRecording();
+ * 
+ * Step 3: Start Microphone Recognizing
+ * 
+ * 		REO.startRecognizing();
+ * 
+ * Step 4: Get the Result
+ * 
+ * 		String result = REO.getResultText();
+ * 
+ * Step 5: Stop Microphone Recording
+ * 
+ * 		REO.stopMicRecording();
+ * 
+ * Step 6: Deallocate memory to recognizer
+ * 
+ * 		REO.memoryDeallocation();
+ * */
+
 public class RecognitionEngine extends Thread
 {
 	private String configFileName;
@@ -27,111 +55,91 @@ public class RecognitionEngine extends Thread
 	public RecognitionEngine(String configFileName)
 	{
 		this.configFileName = configFileName + ".config.xml";
-		setURL();
-		setConfigurationManager();
-		setRecognizer();
-		setMicrophone();
-	}
-	
-	public void setURL()
-	{
-		url = RecognitionEngine.class.getResource(configFileName);
-	}
-	
-	public void setConfigurationManager()
-	{
+		url = RecognitionEngine.class.getResource(this.configFileName);
 		configManager = new ConfigurationManager(url);
-	}
-	
-	public void setRecognizer()
-	{
 		recognizer = (Recognizer) configManager.lookup("recognizer");
-	}
-	
-	public void setMicrophone()
-	{
 		microphone = (Microphone) configManager.lookup("microphone");
+		recognizer.allocate();
 	}
 	
-	public void memoryAllocation()
+	public void startMicRecording()
 	{
-		this.recognizer.allocate();
-	}
-	
-	// Thread based implementation of Recognition
-	
-	@Override
-	public void run()
-	{
-		memoryAllocation();
-		
-		if (microphone.startRecording()) 
-        {
-        	
-        	while (true) 
-        	{
-        		System.out.println("Start speaking. Press Ctrl-C to quit.\n");
-        		 
-        		result = recognizer.recognize();
-        		
-        		if (result != null) 
-        		{
-        			resultText = result.getBestFinalResultNoFiller();
-        			        			
-        			System.out.println("You said: " + resultText + "\n");
-        		} 
-        		else 
-        		{
-        			System.out.println("I can't hear what you said.\n");
-        		}
-        	}
-        } 
-        else 
-        {
-        	System.out.println("Cannot start microphone.");
-        	memoryDeallocation();
-        	System.exit(1);
-        }
+		microphone.clear();
+		microphone.startRecording();
 	}
 	
 	// Function based implementation of Recognition
-	
 	public void startRecognizing()
 	{
-		memoryAllocation();
+		// microphone.clear();
 		
-		if (microphone.startRecording()) 
-        {
-        	
-        	while (true) 
-        	{
-        		System.out.println("Start speaking. Press Ctrl-C to quit.\n");
-        		 
-        		result = recognizer.recognize();
-        		
-        		if (result != null) 
-        		{
-        			resultText = result.getBestFinalResultNoFiller();
-        			        			
-        			System.out.println("You said: " + resultText + "\n");
-        		} 
-        		else 
-        		{
-        			System.out.println("I can't hear what you said.\n");
-        		}
-        	}
-        } 
-        else 
-        {
-        	System.out.println("Cannot start microphone.");
-        	memoryDeallocation();
-        	System.exit(1);
-        }
+		System.out.println("Console: Speak now my friend!");
+		
+		// microphone.startRecording();
+		
+		result = recognizer.recognize();
+		
+		resultText = result.getBestFinalResultNoFiller();
+		
+		System.out.println("Console: You said: "+resultText);
+		
+		// microphone.stopRecording();
+	}
+	
+	public void stopMicRecording()
+	{
+		microphone.stopRecording();
+	}
+	
+	public String getResultText()
+	{
+		return resultText;
 	}
 	
 	public void memoryDeallocation()
 	{
 		this.recognizer.deallocate();
+	}
+	
+	
+	
+	
+	/* ANYTHING BELOW THIS IS REDUNDANT CODE!! */
+	
+	
+	
+	
+	// Thread based implementation of Recognition
+	@Override
+	public void run()
+	{		
+		if (microphone.startRecording()) 
+        {
+        	
+        	while (true) 
+        	{
+        		System.out.println("Start speaking. Press Ctrl-C to quit.\n");
+        		 
+        		result = recognizer.recognize();
+        		
+        		if (result != null) 
+        		{
+        			resultText = result.getBestFinalResultNoFiller();
+        			        			
+        			System.out.println("You said: " + resultText + "\n");
+        		} 
+        		else 
+        		{
+        			System.out.println("I can't hear what you said.\n");
+        		}
+        	}
+        } 
+        else 
+        {
+        	System.out.println("Cannot start microphone.");
+        	memoryDeallocation();
+        	System.exit(1);
+        }
 	}
 	
 	/*

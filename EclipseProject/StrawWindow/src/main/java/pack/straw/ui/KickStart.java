@@ -1,7 +1,6 @@
 package pack.straw.ui;
 
 import javafx.application.Application;
-import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -11,7 +10,6 @@ import javafx.scene.control.TextField;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
@@ -38,9 +36,6 @@ public class KickStart extends Application
 	
 	private String adminLoginUsername3 = "Chandan Kumar";
 	private String adminLoginPassword3 = "B120223030";
-	
-	private String adminLoginUsername4 = "Abhishek Sharma";
-	private String adminLoginPassword4 = "B120220801";
 	
 	@FXML private TextField UsernameField;
 	@FXML private TextField PasswordField;
@@ -90,8 +85,8 @@ public class KickStart extends Application
 			try
 			{
 				startSession.openSelectSiteWindow();
-				Stage stage = (Stage) LoginButton.getScene().getWindow();
-				stage.close();
+				primaryStage = (Stage) LoginButton.getScene().getWindow();
+				primaryStage.close();
 			}
 			catch (Exception e)
 			{
@@ -118,8 +113,7 @@ public class KickStart extends Application
 	{
 		if((username.equalsIgnoreCase(adminLoginUsername1) && password.equalsIgnoreCase(adminLoginPassword1)) ||
 				(username.equalsIgnoreCase(adminLoginUsername2) && password.equalsIgnoreCase(adminLoginPassword2)) ||
-				(username.equalsIgnoreCase(adminLoginUsername3) && password.equalsIgnoreCase(adminLoginPassword3)) ||
-				(username.equalsIgnoreCase(adminLoginUsername4) && password.equalsIgnoreCase(adminLoginPassword4)))
+				(username.equalsIgnoreCase(adminLoginUsername3) && password.equalsIgnoreCase(adminLoginPassword3)))
 			return true;
 		return false;
 	}

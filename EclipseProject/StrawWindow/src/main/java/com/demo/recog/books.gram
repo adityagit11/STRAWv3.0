@@ -6,22 +6,28 @@
 
 grammar books;
 
-public <books> =     mouse scroll up |
-					 mouse scroll down |
-					 
-					 credit score |
-					 home loan |
-					 car loan |
-					 used car loan |
-					 personal loan |
-					 credit card |
-					 debit card |
-					 mutual fund |
-					 life insurance |
-					 car insurance |
-					 two wheeler insurance |
-					 health insurance |
-					 savings account |
-					 fixed deposit |
-					 
-					 terminate application;
+public <books> =
+		mouse scroll upward |
+		mouse scroll down |
+		
+		go to home page |
+		
+		credit score |
+		home loan |
+		car loan |
+		used car loan |
+		personal loan |
+		credit card |
+		debit card |
+		mutual fund |
+		life insurance |
+		car insurance |
+		two wheeler insurance |
+		health insurance |
+		savings account |
+		fixed deposit |
+		
+		yes please confirm |
+		no do not confirm |
+		
+		terminate application;
